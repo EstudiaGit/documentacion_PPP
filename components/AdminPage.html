@@ -1,0 +1,1447 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>AstroRetos documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+
+               if ($darkModeToggles.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">AstroRetos documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  AdminPage</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/pages/admin/admin.page.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-admin</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./admin.page.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./admin.page.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#menuSvc" >menuSvc</a>
+                            </li>
+                            <li>
+                                <a href="#puntos" >puntos</a>
+                            </li>
+                            <li>
+                                <a href="#retoActivo" >retoActivo</a>
+                            </li>
+                            <li>
+                                <a href="#retos" >retos</a>
+                            </li>
+                            <li>
+                                <a href="#segmento" >segmento</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#userEmail" >userEmail</a>
+                            </li>
+                            <li>
+                                <a href="#usuario" >usuario</a>
+                            </li>
+                            <li>
+                                <a href="#usuarios" >usuarios</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#cambiarEstado" >cambiarEstado</a>
+                            </li>
+                            <li>
+                                <a href="#cambiarRol" >cambiarRol</a>
+                            </li>
+                            <li>
+                                <a href="#deleteReto" >deleteReto</a>
+                            </li>
+                            <li>
+                                <a href="#deleteUser" >deleteUser</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#segmentChanged" >segmentChanged</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(userSvc: <a href="../injectables/UserService.html" target="_self">UserService</a>, menuSvc: <a href="../injectables/MenuService.html" target="_self">MenuService</a>, authSvc: <a href="../injectables/AuthService.html" target="_self">AuthService</a>, avisosSvc: <a href="../injectables/AvisosService.html" target="_self">AvisosService</a>, retoSvc: <a href="../injectables/RetoService.html" target="_self">RetoService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/app/pages/admin/admin.page.ts:49</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Constructor de clase</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>userSvc</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/UserService.html" target="_self" >UserService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Servicio para el manejo de datos de usuario</p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>menuSvc</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/MenuService.html" target="_self" >MenuService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Servicio para la personalización del Menu</p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>authSvc</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Servicio para la gestion de la Autenticacion</p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>avisosSvc</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AvisosService.html" target="_self" >AvisosService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Servicio para controlar avisos con el Toast</p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>retoSvc</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/RetoService.html" target="_self" >RetoService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Servicio para el manejo de los Retos</p>
+
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cambiarEstado"></a>
+                    <span class="name">
+                        <span ><b>cambiarEstado</b></span>
+                        <a href="#cambiarEstado"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>cambiarEstado(idReto: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="128"
+                                    class="link-to-prism">src/app/pages/admin/admin.page.ts:128</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Metodo que cambia el estado del reto: activo&lt;=&gt;inactivo</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>idReto</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Id del Reto</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cambiarRol"></a>
+                    <span class="name">
+                        <span ><b>cambiarRol</b></span>
+                        <a href="#cambiarRol"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>cambiarRol(userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="112"
+                                    class="link-to-prism">src/app/pages/admin/admin.page.ts:112</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Método para cambiar el Rol de un usuario concreto Retador&lt;=&gt;Administrador</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>userId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Id del usuario</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteReto"></a>
+                    <span class="name">
+                        <span ><b>deleteReto</b></span>
+                        <a href="#deleteReto"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>deleteReto(idReto: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="160"
+                                    class="link-to-prism">src/app/pages/admin/admin.page.ts:160</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Metodo que elimina un reto</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>idReto</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Id del Reto a eliminar</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteUser"></a>
+                    <span class="name">
+                        <span ><b>deleteUser</b></span>
+                        <a href="#deleteUser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>deleteUser(userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="145"
+                                    class="link-to-prism">src/app/pages/admin/admin.page.ts:145</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Metodo que elimina un usuaio</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>userId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Ide del usuario a borrar</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="74"
+                                    class="link-to-prism">src/app/pages/admin/admin.page.ts:74</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Metodo de inicio
+Comprueba el usuario logado para almacenar los datos de su perfil
+Obtiene tambien la lista de todos los retos y usuarios para mostrarlos</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="segmentChanged"></a>
+                    <span class="name">
+                        <span ><b>segmentChanged</b></span>
+                        <a href="#segmentChanged"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>segmentChanged(event: Event)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="98"
+                                    class="link-to-prism">src/app/pages/admin/admin.page.ts:98</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Metodo que realiza el cambio de segmento al recibir un evento</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                        <code>Event</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Evento (cambio de segmento)</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="menuSvc"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>menuSvc</b></span>
+                        <a href="#menuSvc"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../injectables/MenuService.html" target="_self" >MenuService</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">src/app/pages/admin/admin.page.ts:60</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description">Servicio para la personalización del Menu</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="puntos"></a>
+                    <span class="name">
+                        <span ><b>puntos</b></span>
+                        <a href="#puntos"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/pages/admin/admin.page.ts:44</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Variable para guardar los puntos de los usuarios</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="retoActivo"></a>
+                    <span class="name">
+                        <span ><b>retoActivo</b></span>
+                        <a href="#retoActivo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/pages/admin/admin.page.ts:39</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>String para guardar si el reto está activo o no</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="retos"></a>
+                    <span class="name">
+                        <span ><b>retos</b></span>
+                        <a href="#retos"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Reto.html" target="_self" >Reto[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/pages/admin/admin.page.ts:29</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Array de objetos de tipo Reto</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="segmento"></a>
+                    <span class="name">
+                        <span ><b>segmento</b></span>
+                        <a href="#segmento"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/pages/admin/admin.page.ts:34</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Variable para manejar la pagina, que será por segmentos</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="userEmail"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>userEmail</b></span>
+                        <a href="#userEmail"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/app/pages/admin/admin.page.ts:49</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Para guardar el mail del usuario logado</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="usuario"></a>
+                    <span class="name">
+                        <span ><b>usuario</b></span>
+                        <a href="#usuario"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Usuario.html" target="_self" >Usuario</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/pages/admin/admin.page.ts:24</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Objeto de tipo Usuario</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="usuarios"></a>
+                    <span class="name">
+                        <span ><b>usuarios</b></span>
+                        <a href="#usuarios"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Usuario.html" target="_self" >Usuario[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/pages/admin/admin.page.ts:19</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Array de objetos de tipo Usuario</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { UserService } from &#x27;../../services/user.service&#x27;;
+import { Reto, Usuario } from &#x27;../../interfaces/interfaces&#x27;;
+import { AvisosService } from &#x27;../../services/avisos.service&#x27;;
+import { RetoService } from &#x27;../../services/reto.service&#x27;;
+import { MenuService } from &#x27;src/app/services/menu.service&#x27;;
+import { AuthService } from &#x27;src/app/services/auth.service&#x27;;
+
+@Component({
+  selector: &#x27;app-admin&#x27;,
+  templateUrl: &#x27;./admin.page.html&#x27;,
+  styleUrls: [&#x27;./admin.page.scss&#x27;],
+})
+export class AdminPage implements OnInit {
+
+  /**
+   * Array de objetos de tipo Usuario
+   */
+  usuarios: Usuario[] &#x3D; [];
+
+  /**
+   * Objeto de tipo Usuario
+   */
+  usuario: Usuario;
+
+  /**
+   * Array de objetos de tipo Reto
+   */
+  retos: Reto[] &#x3D; [];
+
+  /**
+   * Variable para manejar la pagina, que será por segmentos
+   */
+  segmento: string;
+
+  /**
+   * String para guardar si el reto está activo o no
+   */
+  retoActivo: string;
+
+  /**
+   * Variable para guardar los puntos de los usuarios
+   */
+  puntos: number;
+
+  /**
+   * Para guardar el mail del usuario logado
+   */
+  public userEmail: string;
+
+  /**
+   * Constructor de clase
+   * @param userSvc Servicio para el manejo de datos de usuario
+   * @param menuSvc Servicio para la personalización del Menu
+   * @param authSvc Servicio para la gestion de la Autenticacion
+   * @param avisosSvc Servicio para controlar avisos con el Toast
+   * @param retoSvc Servicio para el manejo de los Retos
+   */
+  constructor(private userSvc: UserService,
+    public menuSvc: MenuService,
+    private authSvc: AuthService,
+    private avisosSvc: AvisosService,
+    private retoSvc: RetoService) {
+
+    this.menuSvc.setMenu();
+
+  }
+
+  /**
+   * Metodo de inicio
+   * Comprueba el usuario logado para almacenar los datos de su perfil
+   * Obtiene tambien la lista de todos los retos y usuarios para mostrarlos
+   */
+  ngOnInit() {
+
+    this.authSvc.getUserEmail().then(email &#x3D;&gt; {
+      this.userEmail &#x3D; email;
+      this.userSvc.getUserByEmail(this.userEmail).subscribe(usuario &#x3D;&gt; {
+        this.usuario &#x3D; usuario;
+      });
+
+    });
+
+    this.retoSvc.getRetos().subscribe(retos &#x3D;&gt; {
+      this.retos &#x3D; retos;
+    });
+
+    this.userSvc.getUsers().subscribe(users &#x3D;&gt; {
+      this.usuarios &#x3D; users;
+    });
+
+  }
+
+  /**
+   * Metodo que realiza el cambio de segmento al recibir un evento
+   * @param event Evento (cambio de segmento)
+   */
+  segmentChanged(event: Event) {
+
+    this.segmento &#x3D; (event as CustomEvent).detail.value;
+
+    this.retoSvc.getRetos().subscribe(retos &#x3D;&gt; {
+      this.retos &#x3D; retos;
+    });
+
+  }
+
+  /**
+   * Método para cambiar el Rol de un usuario concreto Retador&lt;&#x3D;&gt;Administrador
+   * @param userId Id del usuario
+   */
+  cambiarRol(userId: string) {
+
+    console.log(&#x27;cambio rol&#x27;, userId);
+    try {
+      this.userSvc.updateUserRol(userId);
+      this.avisosSvc.presentToast(&#x27;Cambio de Rol Correcto&#x27;, &#x27;success&#x27;);
+    } catch (error) {
+      this.avisosSvc.presentToast(&#x27;Error en el cambio de Rol&#x27;, &#x27;danger&#x27;);
+    }
+
+  }
+
+  /**
+   * Metodo que cambia el estado del reto: activo&lt;&#x3D;&gt;inactivo
+   * @param idReto Id del Reto
+   */
+  cambiarEstado(idReto: string) {
+
+    console.log(&#x27;cambio Estado&#x27;, idReto);
+    try {
+      this.retoSvc.updateEstadoReto(idReto);
+
+      this.avisosSvc.presentToast(&#x27;Cambio de Estado Correcto&#x27;, &#x27;success&#x27;);
+    } catch (error) {
+      this.avisosSvc.presentToast(&#x27;Error en el cambio de Estado&#x27;, &#x27;danger&#x27;);
+    }
+
+  }
+
+  /**
+   * Metodo que elimina un usuaio
+   * @param userId Ide del usuario a borrar
+   */
+  deleteUser(userId: string) {
+
+    try {
+      this.authSvc.deleteUser(userId);
+      this.avisosSvc.presentToast(&#x27;Usuario eliminado correctamente&#x27;, &#x27;success&#x27;);
+    } catch (error) {
+      this.avisosSvc.presentToast(&#x27;Error al eliminar el usuario&#x27;, &#x27;danger&#x27;);
+    }
+
+  }
+
+  /**
+   * Metodo que elimina un reto
+   * @param idReto Id del Reto a eliminar
+   */
+  deleteReto(idReto: string) {
+
+    try {
+      this.retoSvc.deleteReto(idReto);
+      this.avisosSvc.presentToast(&#x27;Usuario eliminado correctamente&#x27;, &#x27;success&#x27;);
+    } catch (error) {
+      this.avisosSvc.presentToast(&#x27;Error al eliminar el usuario&#x27;, &#x27;danger&#x27;);
+    }
+
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;ion-header&gt;
+  &lt;ion-toolbar&gt;
+    &lt;ion-segment value&#x3D;&quot;retos&quot; (ionChange)&#x3D;&quot;segmentChanged($event)&quot;&gt;
+      &lt;ion-segment-button value&#x3D;&quot;retos&quot;&gt;
+        &lt;ion-label&gt;Retos&lt;/ion-label&gt;
+      &lt;/ion-segment-button&gt;
+      &lt;ion-segment-button value&#x3D;&quot;users&quot;&gt;
+        &lt;ion-label&gt;Usuarios&lt;/ion-label&gt;
+      &lt;/ion-segment-button&gt;
+    &lt;/ion-segment&gt;
+  &lt;/ion-toolbar&gt;
+&lt;/ion-header&gt;
+
+&lt;ion-content class&#x3D;&quot;ion-padding&quot;&gt;
+  &lt;div *ngIf&#x3D;&quot;segmento &#x3D;&#x3D; &#x27;retos&#x27;&quot;&gt;
+    &lt;ion-list&gt;
+
+      &lt;ion-item-sliding *ngFor&#x3D;&quot;let reto of retos&quot;&gt;
+        &lt;ion-item&gt;
+          &lt;ion-avatar slot&#x3D;&quot;start&quot;&gt;
+            &lt;img [src]&#x3D;&quot;reto.IMAGEN&quot; /&gt;
+          &lt;/ion-avatar&gt;
+          &lt;ion-label&gt;
+            &lt;h3&gt;{{ reto.TITULO }} ({{reto.ACTIVO}})&lt;/h3&gt;
+           
+          &lt;/ion-label&gt;
+        &lt;/ion-item&gt;
+        &lt;ion-item-options side&#x3D;&quot;end&quot;&gt;
+          &lt;ion-item-option color&#x3D;&quot;success&quot; (click)&#x3D;&quot;cambiarEstado(reto.ID)&quot;&gt;
+           &lt;ion-icon slot&#x3D;&quot;icon-only&quot; name&#x3D;&quot;sync-circle-outline&quot;&gt;&lt;/ion-icon&gt;
+          &lt;/ion-item-option&gt;
+          &lt;ion-item-option color&#x3D;&quot;danger&quot;&gt;
+            &lt;ion-icon slot&#x3D;&quot;icon-only&quot; name&#x3D;&quot;trash&quot; (click)&#x3D;&quot;deleteReto(reto.ID)&quot;&gt;&lt;/ion-icon&gt;
+          &lt;/ion-item-option&gt;
+        &lt;/ion-item-options&gt;
+      &lt;/ion-item-sliding&gt;
+
+    &lt;/ion-list&gt;
+  &lt;/div&gt;
+  &lt;div *ngIf&#x3D;&quot;segmento &#x3D;&#x3D; &#x27;users&#x27;&quot;&gt;
+    &lt;ion-list&gt;
+
+      &lt;ion-item-sliding *ngFor&#x3D;&quot;let usuario of usuarios&quot;&gt;
+        &lt;ion-item&gt;
+          &lt;ion-avatar slot&#x3D;&quot;start&quot;&gt;
+            &lt;img [src]&#x3D;&quot;usuario.AVATAR&quot; /&gt;
+          &lt;/ion-avatar&gt;
+          &lt;ion-label&gt;
+            &lt;h3&gt;{{ usuario.NOMBRE }}  ({{usuario.ROL}}) &lt;/h3&gt;
+            &lt;p&gt;&lt;small&gt;{{ usuario.EMAIL }}&lt;/small&gt;&lt;/p&gt;
+          &lt;/ion-label&gt;
+          &lt;ion-badge slot&#x3D;&quot;end&quot;&gt;{{ usuario.PUNTOS }}&lt;/ion-badge&gt;
+        &lt;/ion-item&gt;
+        &lt;ion-item-options side&#x3D;&quot;end&quot;&gt;
+          &lt;ion-item-option (click)&#x3D;&quot;cambiarRol(usuario.ID)&quot; color&#x3D;&quot;success&quot;&gt;
+            &lt;ion-icon slot&#x3D;&quot;icon-only&quot; name&#x3D;&quot;sync-circle-outline&quot;&gt;&lt;/ion-icon&gt;
+          &lt;/ion-item-option&gt;
+          &lt;ion-item-option (click)&#x3D;&quot;deleteUser(usuario.ID)&quot; color&#x3D;&quot;danger&quot;&gt;
+            &lt;ion-icon slot&#x3D;&quot;icon-only&quot; name&#x3D;&quot;trash&quot;&gt;&lt;/ion-icon&gt;
+          &lt;/ion-item-option&gt;
+        &lt;/ion-item-options&gt;
+      &lt;/ion-item-sliding&gt;
+
+    &lt;/ion-list&gt;
+  &lt;/div&gt;
+
+  &lt;app-menu [menuOpts]&#x3D;&quot;this.menuSvc.menuOpts&quot;&gt;&lt;/app-menu&gt;
+&lt;/ion-content&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./admin.page.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><ion-header>  <ion-toolbar>    <ion-segment value="retos" (ionChange)="segmentChanged($event)">      <ion-segment-button value="retos">        <ion-label>Retos</ion-label>      </ion-segment-button>      <ion-segment-button value="users">        <ion-label>Usuarios</ion-label>      </ion-segment-button>    </ion-segment>  </ion-toolbar></ion-header><ion-content class="ion-padding">  <div *ngIf="segmento == \'retos\'">    <ion-list>      <ion-item-sliding *ngFor="let reto of retos">        <ion-item>          <ion-avatar slot="start">            <img [src]="reto.IMAGEN" />          </ion-avatar>          <ion-label>            <h3>{{ reto.TITULO }} ({{reto.ACTIVO}})</h3>                     </ion-label>        </ion-item>        <ion-item-options side="end">          <ion-item-option color="success" (click)="cambiarEstado(reto.ID)">           <ion-icon slot="icon-only" name="sync-circle-outline"></ion-icon>          </ion-item-option>          <ion-item-option color="danger">            <ion-icon slot="icon-only" name="trash" (click)="deleteReto(reto.ID)"></ion-icon>          </ion-item-option>        </ion-item-options>      </ion-item-sliding>    </ion-list>  </div>  <div *ngIf="segmento == \'users\'">    <ion-list>      <ion-item-sliding *ngFor="let usuario of usuarios">        <ion-item>          <ion-avatar slot="start">            <img [src]="usuario.AVATAR" />          </ion-avatar>          <ion-label>            <h3>{{ usuario.NOMBRE }}  ({{usuario.ROL}}) </h3>            <p><small>{{ usuario.EMAIL }}</small></p>          </ion-label>          <ion-badge slot="end">{{ usuario.PUNTOS }}</ion-badge>        </ion-item>        <ion-item-options side="end">          <ion-item-option (click)="cambiarRol(usuario.ID)" color="success">            <ion-icon slot="icon-only" name="sync-circle-outline"></ion-icon>          </ion-item-option>          <ion-item-option (click)="deleteUser(usuario.ID)" color="danger">            <ion-icon slot="icon-only" name="trash"></ion-icon>          </ion-item-option>        </ion-item-options>      </ion-item-sliding>    </ion-list>  </div>  <app-menu [menuOpts]="this.menuSvc.menuOpts"></app-menu></ion-content></div>'
+    var COMPONENTS = [{'name': 'AboutPage', 'selector': 'app-about'},{'name': 'AdminPage', 'selector': 'app-admin'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'FabLoginComponent', 'selector': 'app-fab-login'},{'name': 'FavoritosPage', 'selector': 'app-favoritos'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomePage', 'selector': 'app-home'},{'name': 'InfoRetoComponent', 'selector': 'app-info-reto'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MenuComponent', 'selector': 'app-menu'},{'name': 'MisRetosPage', 'selector': 'app-mis-retos'},{'name': 'NewRetoComponent', 'selector': 'app-new-reto'},{'name': 'NewsPagePage', 'selector': 'app-news-page'},{'name': 'NoticiaComponent', 'selector': 'app-noticia'},{'name': 'NoticiasComponent', 'selector': 'app-noticias'},{'name': 'PerfilPage', 'selector': 'app-perfil'},{'name': 'RankingPage', 'selector': 'app-ranking'},{'name': 'RegistroComponent', 'selector': 'app-registro'},{'name': 'RetoComponent', 'selector': 'app-reto'},{'name': 'RetosComponent', 'selector': 'app-retos'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'AdminPage'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'AdminPage.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
